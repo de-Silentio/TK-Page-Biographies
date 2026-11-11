@@ -1,0 +1,6 @@
+{
+  "name": "Historical Biographies Archive",
+  "description": "Explore in-depth biographies, authentic portraits, quick facts, and quotes of notable historical and modern figures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
