@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Biography, getAdjacentBiographies } from '../data/biographies';
+import { Biography, getAdjacentBiographies, getPortraitUrl } from '../data/biographies';
 import { parseBiographyText } from '../utils/textParser';
 import {
   ArrowLeft,
@@ -192,7 +192,7 @@ export const BioDetail: React.FC<BioDetailProps> = ({ bio, onBack, onSelectPerso
               <div className="aspect-4/5 w-full bg-stone-200 rounded-lg overflow-hidden border border-stone-300 shadow-sm relative">
                 {!imgError ? (
                   <img
-                    src={bio.image}
+                    src={getPortraitUrl(bio.image)}
                     alt={`Portrait of ${bio.name}`}
                     className="w-full h-full object-cover object-top"
                     onError={() => setImgError(true)}
@@ -547,7 +547,7 @@ export const BioDetail: React.FC<BioDetailProps> = ({ bio, onBack, onSelectPerso
               <X className="w-5 h-5" />
             </button>
             <img
-              src={bio.image}
+              src={getPortraitUrl(bio.image)}
               alt={`Portrait of ${bio.name}`}
               className="w-full max-h-[80vh] object-contain rounded"
             />

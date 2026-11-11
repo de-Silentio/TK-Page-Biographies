@@ -35,3 +35,11 @@ export function getAdjacentBiographies(currentId: string): { prev?: Biography; n
   const next = index < BIOGRAPHIES.length - 1 ? BIOGRAPHIES[index + 1] : BIOGRAPHIES[0];
   return { prev, next };
 }
+
+export function getPortraitUrl(imagePath: string): string {
+  if (!imagePath) return '';
+  const clean = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+  const base = import.meta.env.BASE_URL || './';
+  return base.endsWith('/') ? `${base}${clean}` : `${base}/${clean}`;
+}
+

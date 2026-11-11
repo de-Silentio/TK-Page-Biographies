@@ -1,5 +1,5 @@
 import React from 'react';
-import { Biography } from '../data/biographies';
+import { Biography, getPortraitUrl } from '../data/biographies';
 import { ArrowRight, User } from 'lucide-react';
 
 interface TableViewProps {
@@ -45,7 +45,7 @@ export const TableView: React.FC<TableViewProps> = ({ biographies, onSelectPerso
                     aria-label={`View biography of ${bio.name}`}
                   >
                     <img
-                      src={bio.image}
+                      src={getPortraitUrl(bio.image)}
                       alt={bio.name}
                       className="w-full h-full object-cover object-top group-hover:scale-108 transition-transform"
                       loading="lazy"

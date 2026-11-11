@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { BIOGRAPHIES, Category, getBiographyById } from './data/biographies';
+import { BIOGRAPHIES, Category, getBiographyById, getPortraitUrl } from './data/biographies';
 import { Header } from './components/Header';
 import { BioCard } from './components/BioCard';
 import { BioDetail } from './components/BioDetail';
@@ -177,7 +177,7 @@ export default function App() {
                   className="w-16 h-20 sm:w-20 sm:h-24 bg-stone-100 rounded overflow-hidden border border-stone-200 shrink-0 block"
                 >
                   <img
-                    src={featuredPerson.image}
+                    src={getPortraitUrl(featuredPerson.image)}
                     alt={featuredPerson.name}
                     className="w-full h-full object-cover object-top hover:scale-105 transition-transform"
                   />

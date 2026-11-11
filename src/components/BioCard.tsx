@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Biography } from '../data/biographies';
+import { Biography, getPortraitUrl } from '../data/biographies';
 import { ArrowRight, User } from 'lucide-react';
 
 interface BioCardProps {
@@ -28,7 +28,7 @@ export const BioCard: React.FC<BioCardProps> = ({ bio, onSelect }) => {
       >
         {!imgError ? (
           <img
-            src={bio.image}
+            src={getPortraitUrl(bio.image)}
             alt={`Portrait of ${bio.name}`}
             className="w-full h-full object-cover object-top group-hover:scale-104 transition-transform duration-300"
             onError={() => setImgError(true)}
